@@ -1,0 +1,10 @@
+.menu-container {
+  display: flex;
+  justify-content: space-between; /* จัดวางให้อยู่ตรงข้ามกัน */
+  align-items: center; /* จัดให้อยู่ตรงกลางตามแนวตั้ง */
+  padding: 0 20px; /* ระยะห่างขอบซ้ายและขวาของ Header Menu */
+}
+
+.logo img {
+  height: 40px; /* ปรับขนาดของ LOGO ตามความต้องการ */
+}
