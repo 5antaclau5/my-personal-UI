@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1890ff;
+  background-color: #043563;
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
@@ -56,8 +56,18 @@ body {
 
  /* CSS สำหรับ Footer */
  .footer {
-  background-color: #1890ff; /* สีพื้นหลังของ Footer เท่ากับ Header */
-  color: white; /* สีข้อความใน Footer */
+  background-color: #043563;
+  color: white; 
   padding: 1rem;
   text-align: center;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+
+
+  /* padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px; */
 }
+

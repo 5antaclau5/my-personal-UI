@@ -1,0 +1,55 @@
+  #Contactid .container {
+    padding: 64px;
+  }
+  
+  #Contactid .row:after {
+    content: "";
+    display: table;
+    clear: both
+  }
+  
+  #Contactid .column-66 {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+  }
+  
+  #Contactid .column-33 {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+  }
+  
+  #Contactid .large-font {
+    font-size: 48px;
+  }
+  
+  #Contactid .xlarge-font {
+    font-size: 64px
+  }
+  
+  #Contactid .button {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #04AA6D;
+  }
+  
+  #Contactid img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    #Contactid .column-66,
+    .column-33 {
+      width: 100%;
+      text-align: center;
+    }
+    #Contactid img {
+      margin: auto;
+    }
+}
