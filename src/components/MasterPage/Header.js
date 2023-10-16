@@ -1,26 +1,31 @@
-
-import React, { useState } from 'react';
-import { HomeOutlined, UserOutlined, AppstoreAddOutlined, PhoneOutlined } from '@ant-design/icons';
-import './HeaderMenu.css'; // นำเข้า CSS สไตล์ที่สร้างขึ้น
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Menu } from 'antd';
+import {
+  HomeOutlined,
+  AppstoreAddOutlined,
+  FileTextOutlined,
+  UserOutlined,
+  SettingOutlined,
+  CoffeeOutlined
+} from '@ant-design/icons';
+import Logo from '../../imgs/people-avatar-icon-png.webp';
+import './Menu.css';
 
 const Header = () => {
-  const [current, setCurrent] = useState('home');
-  const onClick = (e) => {
-    setCurrent(e.key);
-
-  };
   return (
-    <div className="menu-container">
-      <div className="logo">
-        <UserOutlined />
+    <div class="navbar">
+      <div class="logo">
+        <ul>
+          <li><img src={Logo} alt="Logo" /></li>
+          <li> <div class="site-name">Jakkit Wongtewee</div></li>
+        </ul>
       </div>
-      <Menu theme="dark" mode="horizontal">
-        <Menu.Item key="1">หน้าหลัก</Menu.Item>
-        <Menu.Item key="2">เกี่ยวกับเรา</Menu.Item>
-        <Menu.Item key="3">บริการของเรา</Menu.Item>
-        <Menu.Item key="4">ติดต่อเรา</Menu.Item>
-      </Menu>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+      </ul>
     </div>
   );
 }

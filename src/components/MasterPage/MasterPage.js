@@ -6,9 +6,9 @@ const MasterPage = ({ children }) => {
   return (
     <div>
       <Header />
-      <main>
+      <div>
         {children}
-      </main>
+      </div>
       <Footer />
     </div>
   );
