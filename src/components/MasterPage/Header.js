@@ -14,7 +14,7 @@ import './Menu.css';
 
 const Header = () => {
   return (
-    <div class="navbar">
+    <div id="navbarid" class="navbar">
       <div class="logo">
         <ul>
           <li><img src={Logo} alt="Logo" /></li>

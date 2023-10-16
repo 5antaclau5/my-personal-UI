@@ -4,7 +4,7 @@ import './Home.css';
 const Home = () => {
     return (
         <div id="HomeId" class="Homeclass">
-            <h1>Simple float example</h1>
+            <h1>Contact</h1>
 
             <div class="box">Float</div>
 
