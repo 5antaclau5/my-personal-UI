@@ -1,46 +1,67 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* .column {
-    float: left;
-    width: 50%;
-    padding: 15px;
-    background-color: #0435636e;
-    background-image: url("../../imgs/Artboard1.png");
-    background-size: cover; */
-/* ปรับขนาดรูปภาพให้ครอบคลุมพื้นที่ของ body */
-/* background-repeat: no-repeat; */
-/* ไม่ต้องการรูปภาพซ้ำซ้อน */
-/* background-attachment: fixed; */
-/* รูปภาพถูกติดและไม่ขยายเมื่อเลื่อนหน้าเว็บ */
-/* background-position: center;
-} */
-
-#HomeId {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
+#Homeid .container {
+  padding: 64px;
 }
 
-
-#HomeId p {
-    line-height: 2;
-    word-spacing: 0.1rem;
+#Homeid .row:after {
+  content: "";
+  display: table;
+  clear: both
 }
 
-
-#HomeId .box {
-    background-color: rgb(207, 232, 220);
-    border: 2px solid rgb(79, 185, 227);
-    padding: 10px;
-    border-radius: 5px;
+#Homeid .column-100 {
+  float: left;
+  width: 100%;
+  padding: 20px;
 }
 
+#Homeid .column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
 
-#HomeId .box {
-    float: left;
-    width: 150px;
-    height: 150px;
-    margin-right: 30px;
+#Homeid .column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+#Homeid .large-font {
+  font-size: 48px;
+}
+
+#Homeid .xlarge-font {
+  font-size: 64px
+}
+
+#Homeid .button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #04AA6D;
+}
+
+#Homeid img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+
+  #Homeid .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+
+  #Homeid img {
+    margin: auto;
+  }
 }
