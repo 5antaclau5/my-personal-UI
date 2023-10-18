@@ -18,6 +18,9 @@ const Skill = () => {
                     </div>
                 </div>
                 <div class="card__content">
+                    <div style={{ color: 'red', padding: '10px' }}>
+                        asdasd
+                    </div>
                 </div>
             </div>
         </div>

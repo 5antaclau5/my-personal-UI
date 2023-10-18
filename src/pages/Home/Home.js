@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Space, Modal, Typography, Row, Col } from 'antd';
+import { Card, Space, Modal, Typography, Image } from 'antd';
 import Skill from "./Skills/Skills.js"
 import './Home.css';
 
@@ -66,7 +66,7 @@ const Home = () => {
     setIsModalOpen(false);
   };
   const renderCardResponsibilities = (val) => (
-    <Card key={"Card" + val.nId} title={val.sDate} extra={<a onClick={() => showModal(val.sDetail)}>Job Description</a>} style={{ width: 400, height: 250 }}>
+    <Card hoverable key={"Card" + val.nId} title={val.sDate} extra={<a onClick={() => showModal(val.sDetail)}>Job Description</a>} style={{ width: 400, height: 250 }}>
       {/* <Text code>Company : {val.sCompany}</Text> */}
       <p>Company : {val.sCompany}</p>
       {val.sOnsite && <p>Onsite : {val.sOnsite}</p>}
@@ -79,6 +79,7 @@ const Home = () => {
       <p>{val.sDetail}</p>
     </Card>
   );
+
   return (
     <div id="Homeid">
       <div class="container">
@@ -89,7 +90,7 @@ const Home = () => {
             <p style={{ lineHeight: "2", wordSpacing: "0.1rem" }}><span style={{ font: "36px" }}>I am a programmer with experience in web application development using .NET.</span> understand how to create and maintain highly efficient and industry-standard systems. I aim to leverage my knowledge and expertise to add value to the team and organization and am enthusiastic about continuous learning and self-improvement. I am ready to collaborate with a team that aspires to succeed in web system development projects.</p>
           </div>
           <div class="column-33">
-            <img src="https://scontent.fbkk22-3.fna.fbcdn.net/v/t39.30808-6/330933890_725648152229997_3794307667321601845_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHumAMb19CHglXLYoKYVs0d4qlq9j29Ak_iqWr2Pb0CT4t07fGVVEEu5nxvWboxybbVTibb-oKeRcrHh-yFrMaq&_nc_ohc=ID222PdqXbAAX-Z1CA6&_nc_ht=scontent.fbkk22-3.fna&oh=00_AfD0I-W3efyXN3K9s1j3ECiS-bQPO8SVf88KSsZVJigHeg&oe=653258E3" width="500" height="500" />
+            <Image width={"80%"} src="https://scontent.fbkk22-3.fna.fbcdn.net/v/t39.30808-6/330933890_725648152229997_3794307667321601845_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHumAMb19CHglXLYoKYVs0d4qlq9j29Ak_iqWr2Pb0CT4t07fGVVEEu5nxvWboxybbVTibb-oKeRcrHh-yFrMaq&_nc_ohc=ID222PdqXbAAX-Z1CA6&_nc_ht=scontent.fbkk22-3.fna&oh=00_AfD0I-W3efyXN3K9s1j3ECiS-bQPO8SVf88KSsZVJigHeg&oe=653258E3" />
           </div>
         </div>
       </div>
@@ -106,7 +107,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div class="container" style={{ backgroundColor: "#f1f1f1" }} >
+      <div class="container" >
         <div class="row">
           <div class="column-33">
             <img src="https://freepngimg.com/thumb/education/3-2-education-png-clipart.png" alt="App" width="500" height="471" />
@@ -120,12 +121,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" style={{ backgroundColor: "#f1f1f1" }}>
         <div class="row">
           <div class="column-66">
+            <h1 class="xlarge-font"><b>Skills</b></h1>
             <Skill></Skill>
           </div>
           <div class="column-33">
+            <h1 class="xlarge-font"><b>Tools</b></h1>
             {/* <img src="https://www.w3schools.com/w3images/img_app.jpg" width="335" height="471" /> */}
             <Skill></Skill>
           </div>
