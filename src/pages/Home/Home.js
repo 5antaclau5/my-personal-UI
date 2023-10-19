@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Card, Space, Modal, Typography, Image } from 'antd';
 import Skill from "./Skills/Skills.js"
+import SoftSkill from "./SoftSkills/SoftSkills.js"
+import Contact from "./Contact/Contact.js";
 import './Home.css';
 
 const { Text } = Typography;
@@ -99,7 +101,6 @@ const Home = () => {
         <div class="row">
           <div class="column-100">
             <h1 class="xlarge-font"><b>Working Experience</b></h1>
-            {/* <h1 class="large-font" style={{ color: "red" }}><b>Pixels, who?</b></h1> */}
             <Space direction="Horizontal" size={16}>
               {lstResponsibilities.map(renderCardResponsibilities)}
             </Space>
@@ -123,18 +124,35 @@ const Home = () => {
 
       <div class="container" style={{ backgroundColor: "#f1f1f1" }}>
         <div class="row">
-          <div class="column-66">
-            <h1 class="xlarge-font"><b>Skills</b></h1>
+          <div class="column-100" style={{ textAlign: 'center' }}>
+            <h1 class="xlarge-font"><b>Technical Skills</b></h1>
             <Skill></Skill>
           </div>
-          <div class="column-33">
-            <h1 class="xlarge-font"><b>Tools</b></h1>
-            {/* <img src="https://www.w3schools.com/w3images/img_app.jpg" width="335" height="471" /> */}
-            <Skill></Skill>
+          {/* <div class="column-50" style={{ textAlign: 'center' }}>
+            <h1 class="xlarge-font"><b>Soft Skills</b></h1>
+            <SoftSkill></SoftSkill>
+          </div> */}
+        </div>
+      </div>
+
+      <div class="container" >
+        <div class="row">
+          <div class="column-100" style={{ textAlign: 'center' }}>
+            <h1 class="xlarge-font"><b>Soft Skills</b></h1>
+            <SoftSkill></SoftSkill>
           </div>
         </div>
       </div>
 
+      <div class="container" style={{ backgroundColor: "#f1f1f1" }}>
+        <div class="row">
+          <div class="column-100" style={{ textAlign: 'center' }}>
+            <h1 class="xlarge-font"><b>Contact</b></h1>
+            <Contact></Contact>
+
+          </div>
+        </div>
+      </div>
       <Modal title={<h2>Job Description</h2>} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         {
           modalData && (

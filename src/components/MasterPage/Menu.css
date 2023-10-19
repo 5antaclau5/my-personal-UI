@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -26,7 +21,7 @@ body {
   /* ชิดกันในแนวตั้ง */
 }
 
-.navbar li {
+/* .navbar li {
   margin: 0 0.5rem;
 }
 
@@ -65,7 +60,7 @@ li:hover::after {
   transition: color 0.3s;
   transform: scale(1);
   display: block;
-}
+} */
 
 /* .navbar a:hover {
   color: #f0f0f0;
