@@ -85,12 +85,28 @@ const Home = () => {
 
   return (
     <div id="Homeid">
+
+      <div class="container" style={{ marginTop: 15 }}>
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-info">
+            <p class="text-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repellat, consequuntur doloribus voluptate esse iure?</p>
+            <p class="text-title">Autor</p>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
         <div class="row">
           <div class="column-66">
             <h1 class="xlarge-font"><b>Jakkit Wongtewee</b></h1>
             <h1 class="large-font" style={{ color: "MediumSeaGreen" }}><b>About</b></h1>
-            <p style={{ lineHeight: "2", wordSpacing: "0.1rem" }}><span style={{ font: "36px" }}>I am a programmer with experience in web application development using .NET.</span> understand how to create and maintain highly efficient and industry-standard systems. I aim to leverage my knowledge and expertise to add value to the team and organization and am enthusiastic about continuous learning and self-improvement. I am ready to collaborate with a team that aspires to succeed in web system development projects.</p>
+            <p style={{ lineHeight: "2", wordSpacing: "0.1rem" }}>
+              <span style={{ font: "36px" }}>I am a programmer with experience in web application development using .NET.</span>
+              understand how to create and maintain highly efficient and industry-standard systems.
+              I aim to leverage my knowledge and expertise to add value to the team and organization and am enthusiastic about continuous learning and self-improvement.
+              I am ready to collaborate with a team that aspires to succeed in web system development projects.
+            </p>
           </div>
           <div class="column-33">
             <Image width={"80%"} src={Img} />
