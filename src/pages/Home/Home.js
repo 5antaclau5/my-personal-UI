@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Card, Space, Modal, Typography, Image } from 'antd';
+import { Card, Space, Modal, Image, Col, Row, Form, Input } from 'antd';
 import Skill from "./Skills/Skills.js"
 import SoftSkill from "./SoftSkills/SoftSkills.js"
 import Contact from "./Contact/Contact.js";
 import './Home.css';
 import Img from '../../imgs/330933890_725648152229997_3794307667321601845_n.jpg';
 
-const { Text } = Typography;
+const { TextArea } = Input;
+
 let lstResponsibilities = [{
   nId: 1,
   sDate: "January 2023 - Present",
@@ -52,10 +53,28 @@ let lstEducation = [
     sDetail: "Junior High School Education | Nonsiwitthaya School, Thailand",
   }
 ];
+
+
+
 const Home = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
+  const [fields, setFields] = useState([
+    {
+      name: ['nickname'],
+      value: 'Tonkla',
+    }, {
+      name: ['address'],
+      value: '35/306 Soi Charansanitwong 91 Bang Ao Subdistrict, Bang Phlat District Bangkok 10700 Thailand',
+    }, {
+      name: ['phone'],
+      value: '094-559-2691',
+    }, {
+      name: ['email'],
+      value: 'JakkitWongtewee@gmail.com',
+    }
+  ]);
 
   const showModal = (Data) => {
     setModalData(Data);
@@ -89,9 +108,45 @@ const Home = () => {
       <div class="container" style={{ marginTop: 15 }}>
         <div class="card">
           <div class="card-img"></div>
+          <h1 class="xlarge-font"><b>Jakkit Wongtewee</b></h1>
           <div class="card-info">
-            <p class="text-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repellat, consequuntur doloribus voluptate esse iure?</p>
-            <p class="text-title">Autor</p>
+
+            <div class="row" style={{ width: "100%" }} >
+              <div class="column-100">
+                <Form fields={fields} disabled>
+                  <Row justify="space-around">
+                    <Col span={8}>
+                      <Form.Item name="nickname" label="Nickname">
+                        <Input  />
+                      </Form.Item>
+                    </Col>
+                    
+                    <Col span={8}>
+                      <Form.Item name="address" label="Address">
+                        <TextArea rows={3}  />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                  <Row justify="space-around">
+                    <Col span={8}>
+                      <Form.Item name="phone" label="Telephone">
+                        <Input  />
+                      </Form.Item>
+                    </Col>
+                    <Col span={8}>
+                      <Form.Item name="email" label="Email">
+                        <Input  />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Form>
+              </div>
+            </div>
+
+
+            {/* <p class="text-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repellat, consequuntur doloribus voluptate esse iure?</p>
+            <p class="text-title">Autor</p> */}
+
           </div>
         </div>
       </div>
@@ -99,7 +154,7 @@ const Home = () => {
       <div class="container">
         <div class="row">
           <div class="column-66">
-            <h1 class="xlarge-font"><b>Jakkit Wongtewee</b></h1>
+            {/* <h1 class="xlarge-font"><b>Jakkit Wongtewee</b></h1> */}
             <h1 class="large-font" style={{ color: "MediumSeaGreen" }}><b>About</b></h1>
             <p style={{ lineHeight: "2", wordSpacing: "0.1rem" }}>
               <span style={{ font: "36px" }}>I am a programmer with experience in web application development using .NET.</span>
@@ -161,15 +216,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div class="container" style={{ backgroundColor: "#f1f1f1" }}>
-        <div class="row">
-          <div class="column-100" style={{ textAlign: 'center' }}>
-            <h1 class="xlarge-font"><b>Contact</b></h1>
-            <Contact></Contact>
 
-          </div>
-        </div>
-      </div>
       <Modal title={<h2>Job Description</h2>} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         {
           modalData && (

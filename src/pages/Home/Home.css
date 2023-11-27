@@ -9,19 +9,20 @@
 
 #Homeid .card-info {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
   gap: 2em;
+  width: 100%;
   padding: 0 1rem;
 }
 
 #Homeid .card-img {
-  --size: 100px;
+  --size: 120px;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   transform: translateY(-50%);
-  background-image: url('../../imgs/330933890_725648152229997_3794307667321601845_n.jpg');
+  background-image: url('../../imgs/2C6BA3E2-FB7A-43FA-8011-EAFAB1E637BE_1_105_c.jpeg');
   position: relative;
   transition: all .3s ease-in-out;
   background-size: 100% 100%;
@@ -59,7 +60,6 @@
   width: var(--size);
   height: var(--size);
 }
-
 
 
 
