@@ -4,7 +4,7 @@ import './Menu.css';
 const Footer = () => {
   return (
     <div class="footer">
-      &copy; 2023 Your Website Name. All rights reserved.
+      Contact : 094-559-2691. Email : Jakkitwongtewee@gmail.com
     </div>
   );
 }

@@ -122,8 +122,12 @@
 
 @media screen and (max-width: 1000px) {
 
-  #Homeid .column-66,
-  .column-33 {
+  #Homeid .column-66 {
+    width: 100%;
+    text-align: center;
+  }
+
+  #Homeid .column-33 {
     width: 100%;
     text-align: center;
   }

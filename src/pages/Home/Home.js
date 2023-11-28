@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Space, Modal, Image, Col, Row, Form, Input } from 'antd';
 import Skill from "./Skills/Skills.js"
 import SoftSkill from "./SoftSkills/SoftSkills.js"
@@ -10,28 +10,30 @@ const { TextArea } = Input;
 
 let lstResponsibilities = [{
   nId: 1,
-  sDate: "January 2023 - Present",
+  sDate: "2023 - Present",
   sCompany: "Bright Expert Co.,Ltd.",
   sOnsite: "Thai Beverage Public Co.,Ltd.",
   Position: ".NET Developer",
   sDetail: "<h3>API and Back-End Development</h3><p>Designed and developed robust API systems and back-end components for web applications. Utilized Swagger to create user-friendly API documentation.</p><h3>System Analysis and Design</h3><p>Demonstrated the ability to analyze and design computer systems effectively, fulfilling assignments from supervisors. Proficient in project-specific analytical tasks and providing innovative solutions for efficient system analysis and design.</p><h3>Error Resolution</h3><p>Proficient in identifying and rectifying program usage errors, ensuring smooth operation of systems. Developed strategies for error correction and prevention, reporting findings and solutions to project teams and management.</p>",
-}, {
-  nId: 2,
-  sDate: "February 2022 - December 2022",
-  sCompany: "Tech Soft Holding Co.,Ltd",
-  sOnsite: "Easy Buy Public Co.,Ltd.",
-  Position: "FullStack Developer",
-  sDetail: "<h3>Develop and Design Full Stack Software</h3><p>Develop and design full-stack software for both front-end and back-end components, ensuring a comprehensive understanding of both aspects.</p><h3>Develop Programs Using C#.Net (Web MVC)</h3><p>Develop programs using C#.Net with a focus on Web MVC to create web applications.</p><h3>Collect and Analyze Business Requirements to Design and Develop the System</h3><p>Gather and analyze business needs to effectively design and develop systems in alignment with the specified requirements.</p>"
-}, {
+},
+// {
+//   nId: 2,
+//   sDate: "February 2022 - December 2022",
+//   sCompany: "Tech Soft Holding Co.,Ltd",
+//   sOnsite: "Easy Buy Public Co.,Ltd.",
+//   Position: "FullStack Developer",
+//   sDetail: "<h3>Develop and Design Full Stack Software</h3><p>Develop and design full-stack software for both front-end and back-end components, ensuring a comprehensive understanding of both aspects.</p><h3>Develop Programs Using C#.Net (Web MVC)</h3><p>Develop programs using C#.Net with a focus on Web MVC to create web applications.</p><h3>Collect and Analyze Business Requirements to Design and Develop the System</h3><p>Gather and analyze business needs to effectively design and develop systems in alignment with the specified requirements.</p>"
+// }, 
+{
   nId: 3,
-  sDate: "July 2020 - February 2022",
+  sDate: "2020 - 2022",
   sCompany: "Softthai Application Co., Ltd.",
   sOnsite: "",
   Position: "FullStack Developer",
   sDetail: "<h3>Develop and Design Full-Stack Software for Both Front-End and Back-End</h3><p>In this role, I was responsible for developing and designing comprehensive software solutions that covered both the front-end and back-end components. This included a deep understanding of both aspects to ensure seamless integration.</p><h3>Collaborate with Team Leader in Estimating Project Efforts, Developing Project Plans and Schedules, and Executing Tasks According to the Established Plan</h3><p>I actively participated in collaboration with the team leader to estimate project efforts, create project plans, define timelines, and diligently execute tasks according to the outlined project plan.</p><h3>Test Programs by Creating Sample Data and Systematically Evaluating Their Performance, Mimicking Real-World Scenarios</h3><p>Testing was a crucial part of my role. I developed and implemented comprehensive testing procedures by generating sample data and meticulously evaluating the program's functionality step by step to simulate real-world usage.</p><h3>Build and Deploy Applications</h3><p>My responsibilities extended to developing and deploying applications, ensuring they were ready for production use.</p>"
 }, {
   nId: 4,
-  sDate: "December 2019 - June 2020",
+  sDate: "2019 - 2020",
   sCompany: "Betimes Solutions Co.,Ltd",
   sOnsite: "",
   Position: "FullStack Developer",
@@ -60,6 +62,7 @@ const Home = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
+  const [direction, setDirection] = useState('vertical');
   const [fields, setFields] = useState([
     {
       name: ['nickname'],
@@ -87,6 +90,27 @@ const Home = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Set the direction to horizontal for larger screens and vertical for smaller screens
+      if (window.innerWidth > 1000) { // 768px is a common breakpoint for tablets
+        setDirection('horizontal');
+      } else {
+        setDirection('vertical');
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const renderCardResponsibilities = (val) => (
     <Card hoverable key={"Card" + val.nId} title={val.sDate} onClick={() => showModal(val.sDetail)} extra={<a onClick={() => showModal(val.sDetail)}>Job Description</a>} style={{ width: 400, height: 250 }}>
       {/* <Text code>Company : {val.sCompany}</Text> */}
@@ -115,27 +139,27 @@ const Home = () => {
               <div class="column-100">
                 <Form fields={fields} disabled>
                   <Row justify="space-around">
-                    <Col span={8}>
+                    <Col md={{ span: 8 }} sm={{ span: 24 }} xs={{ span: 24 }}>
                       <Form.Item name="nickname" label="Nickname">
-                        <Input  />
+                        <Input />
                       </Form.Item>
                     </Col>
-                    
-                    <Col span={8}>
+
+                    <Col md={{ span: 8 }} xs={{ span: 24 }}>
                       <Form.Item name="address" label="Address">
-                        <TextArea rows={3}  />
+                        <TextArea rows={3} />
                       </Form.Item>
                     </Col>
                   </Row>
                   <Row justify="space-around">
-                    <Col span={8}>
+                    <Col md={{ span: 8 }} sm={{ span: 24 }} xs={{ span: 24 }}>
                       <Form.Item name="phone" label="Telephone">
-                        <Input  />
+                        <Input />
                       </Form.Item>
                     </Col>
-                    <Col span={8}>
+                    <Col md={{ span: 8 }} sm={{ span: 24 }} xs={{ span: 24 }}>
                       <Form.Item name="email" label="Email">
-                        <Input  />
+                        <Input />
                       </Form.Item>
                     </Col>
                   </Row>
@@ -157,14 +181,14 @@ const Home = () => {
             {/* <h1 class="xlarge-font"><b>Jakkit Wongtewee</b></h1> */}
             <h1 class="large-font" style={{ color: "MediumSeaGreen" }}><b>About</b></h1>
             <p style={{ lineHeight: "2", wordSpacing: "0.1rem" }}>
-              <span style={{ font: "36px" }}>I am a programmer with experience in web application development using .NET.</span>
-              understand how to create and maintain highly efficient and industry-standard systems.
-              I aim to leverage my knowledge and expertise to add value to the team and organization and am enthusiastic about continuous learning and self-improvement.
-              I am ready to collaborate with a team that aspires to succeed in web system development projects.
+              <span style={{ font: "36px" }}>I am an experienced web application developer with expertise in .NET technology.</span>
+              My skills include designing and maintaining high-efficiency systems that meet industry standards. I am committed to applying my knowledge and expertise to
+              enhance the value of our team and organization. I am enthusiastic about continuous learning and self-improvement, and I am ready to collaborate with a
+              team that is dedicated to achieving success in web system development projects.
             </p>
           </div>
           <div class="column-33">
-            <Image width={"80%"} src={Img} />
+            <Image src={Img} />
           </div>
         </div>
       </div>
@@ -173,7 +197,7 @@ const Home = () => {
         <div class="row">
           <div class="column-100">
             <h1 class="xlarge-font"><b>Working Experience</b></h1>
-            <Space direction="Horizontal" size={16}>
+            <Space direction={direction} size={16}>
               {lstResponsibilities.map(renderCardResponsibilities)}
             </Space>
           </div>
